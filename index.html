@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<title>STUDENT REGISTRATION </title>
+</head>
+<body>
+<div class="container" >
+	<div class="header"> </div>
+	<h2 class="upper">REGISTRATION FORM </h2>
+
+	<div class="input-form">
+	
+	<input type="numberinput" class="qr-studnum" placeholder="SN NO. 00-00000" >
+	<br>
+
+	<input type="text" class="cname" placeholder="COMPLETE NAME">
+	
+	<div class="radio-container">
+	<input type="radio" id="bsed" class="program">
+		<label for="bsed">BSED</label>
+	<input type="radio" id="beed" class="program">
+		<label for="beed">BSHM</label>
+	<input type="radio" id="bshm" class="program">
+		<label for="bshm">BEED</label>
+	<input type="radio" id="bsit" class="program">
+		<label for="bsit">BSIT</label>
+	</div>
+	
+	
+	<input type="text" class="address" placeholder="ADDRESS">
+	<input type="text" class="stud-num" placeholder="YOUR CONTACT NO.">
+	<input type="text" class="p-num" placeholder="PARENTS CONTACT NO.">
+	<button class="generate-btn">GENERATE</button>
+	<div class="qr-code">
+		<img src="qrimage.jpg" class="qr-image" >
+	</div>
+	<button class="submit-btn">SUBMIT</button>
+</div>
+</div>
+<script>
+
+	
+		var container = document.querySelector(".container");
+		var generateBtn = document.querySelector(".generate-btn");
+		var qrInput = document.querySelector(".qr-studnum");
+		var qrImg = document.querySelector(".qr-image");
+
+		generateBtn.onclick = function(){		
+			if (qrInput.value.length > 0) {
+
+	
+			generateBtn.innerText = "QR CODE GENERATING ...";
+				qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=170x170&data="+qrInput.value;
+				qrImg.onload = function(){
+					generateBtn.innerText = "QR GENERATED";
+				}
+			}
+		}
+</script>
+
+</body>
+</html>
