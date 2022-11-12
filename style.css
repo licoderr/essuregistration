@@ -21,12 +21,13 @@ body{
 }
 .container{
 	background-color: rgb(207, 209, 203);
-	width: 500px;
+	width: 400px;
 	height: 100;
 	border-radius: 20px;
 	padding: 20px;
 	transition: .1s;
 	margin-top: 50px;
+	margin-buttom: 50px;
 	-webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
     box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
     border-radius: 3rem;
